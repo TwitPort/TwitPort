@@ -53,12 +53,11 @@ var Notification = (function () {
 
 
 chrome.browserAction.onClicked.addListener(function (tab) {
-    var action_url = "http://twitter.com/?start=true&tool=on";
+    var action_url = "http://twitter.com/?report=&tool=on";
     chrome.tabs.create({ url: action_url })
     chrome.storage.sync.get('targetlist', function (res) {
         if(res.targetlist){
             chrome.tabs.create({ url: res.targetlist })
-            window.alert("Do not close newly opened tab, it is reporting.")
         }
     })
 });
