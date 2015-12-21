@@ -53,7 +53,7 @@ var Notification = (function () {
 
 
 chrome.browserAction.onClicked.addListener(function (tab) {
-    var action_url = "http://twitter.com/?report=&tool=on";
+    var action_url = "http://twitter.com/?start=true&tool=on";
     chrome.tabs.create({ url: action_url })
     chrome.storage.sync.get('targetlist', function (res) {
         if(res.targetlist){
